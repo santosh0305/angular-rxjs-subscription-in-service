@@ -1,7 +1,16 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
 <div>
   <input type="submit" (click)="getAllUsers()" value="Get all users">
 </div>
+<h2>
+  User of Git
+</h2>
+<div *ngIf="result; else noData">
+  <!-- <div *ngFor="result">
+    <p>
+      {{result.login}}
+    </p>
+  </div> -->
+</div>
+<ng-template #noData>
+
+</ng-template>

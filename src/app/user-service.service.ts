@@ -10,14 +10,13 @@ export class UserServiceService {
   constructor(private httpClient : HttpClient) {
   }
 
-  getAllusers() {
-   return this.httpClient.get<any>(this.url).
-    subscribe(
-      (data: any) => this.result = {...data}
-    );
-  }
+  // getAllusers() : Observable<any> {
+  //  return this.httpClient.get<any>(this.url);
+  // }
 
-  log(text: string){
-    console.log(text)
+  getAllusers() {
+   return this.httpClient.get<any>(this.url).pipe(
+     map((res:any)=> res)
+   );
   }
 }

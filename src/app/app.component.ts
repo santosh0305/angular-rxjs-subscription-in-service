@@ -7,12 +7,22 @@ import {UserServiceService} from './user-service.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular';
   result : any;
   constructor(private userService : UserServiceService){
   }
 
+  // getAllUsers(){
+  //   this.result = this.userService.getAllusers().subscribe(
+  //     (data: any) => this.result = {...data}
+  //   );
+  //   console.table(this.result);
+  // }
+
   getAllUsers(){
-    this.userService.getAllusers()
+    this.result = this.userService.getAllusers().subscribe(
+      (data: any) => this.result = {...data}
+    );
+    console.table(this.result);
   }
+
 }
